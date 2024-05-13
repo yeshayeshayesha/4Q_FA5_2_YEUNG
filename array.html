@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY</title>
+   
+</head>
+
+<body>
+ 
+    <button onclick="redirection()" id="button ">REDIRECT TO CONTROL STRUCTURES !</button>
+    <br><br> <link rel="stylesheet" href="style.css">
+
+    <input type="text" id="name">
+    <button onclick="add()">ADD</button>
+    <button onclick="remove()">REMOVE</button>
+    <button onclick="clearlist()">CLEAR</button>
+    <p id="list"></p>
+
+    <script>
+        function redirection(){
+            window.location.href = "index.html";
+        }
+
+        var contacts=[];
+    
+
+        function remove(){
+            if (contacts.length > 0) {
+                contacts.pop();
+                document.getElementById('list').innerHTML = contacts;
+                document.getElementById('name').value = '';
+
+                
+            }
+        }
+
+        function add(){
+            var name = document.getElementById('name').value;
+            if (contacts.length >= 7) {
+                contacts.shift(); 
+                contacts.push(name);
+            }else{
+                contacts.push(name);
+            }
+
+            document.getElementById('list').innerHTML = contacts;
+            document.getElementById('name').value = '';
+
+        }
+
+        function clearlist(){
+            contacts = [];
+            document.getElementById('list').innerHTML = contacts;
+        }
+            
+  
+    
+    </script>
+</body>
+</html>

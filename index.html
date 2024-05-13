@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <button onclick="redirection()" id="button">REDIRECT TO ARRAY FA !</button>
+
+    <br><br>
+    <link rel="stylesheet" href="style.css">
+    <script>
+var num;
+
+do {
+    num = parseInt(prompt("Enter a number between 1-9:"));
+} while (isNaN(num) || num < 1 || num > 9);
+
+oddeven(num);
+
+function oddeven(num) {
+    if (num % 2 === 0) {
+        triangle(num);
+    } else {
+        rectangle(num);
+    }
+}
+
+
+function triangle(num) {
+    for (var counter = num; counter >= 1; counter--) {
+        document.write(counter + " ");
+        for (var ctwo = counter - 1; ctwo >= 1; ctwo--) {
+            document.write(counter + " ");
+        }
+        document.write("<br>");
+    }
+}
+
+function rectangle(num) {
+    for (var count = num; count >= 1; count--) {
+        for (var cthree = 1; cthree <= num; cthree++) {
+            document.write(count + " ");
+        }
+        document.write("<br>");
+    }
+}
+
+function redirection(){
+    window.location.href = "array.html";
+
+}
+
+
+   
+        
+
+
+    </script>
+</body>
+</html>
